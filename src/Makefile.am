@@ -25,9 +25,9 @@ AM_LDFLAGS = \
 
 AM_LDADD = $(AC_LDADD)
 
-bin_PROGRAMS = idevicerestore
+lib_LTLIBRARIES = libidevicerestore.la
 
-idevicerestore_SOURCES = \
+libidevicerestore_la_SOURCES = \
 	idevicerestore.c idevicerestore.h \
 	endianness.h \
 	common.c common.h \
@@ -48,6 +48,7 @@ idevicerestore_SOURCES = \
 	limera1n.c limera1n.h \
 	download.c download.h \
 	locking.c locking.h
-idevicerestore_CFLAGS = $(AM_CFLAGS)
-idevicerestore_LDFLAGS = $(AM_LDFLAGS)
-idevicerestore_LDADD = $(AM_LDADD)
+
+libidevicerestore_la_CFLAGS = $(AM_CFLAGS)
+libidevicerestore_la_LDFLAGS = $(AM_LDFLAGS)
+libidevicerestore_la_LIBADD = $(AM_LDADD)
